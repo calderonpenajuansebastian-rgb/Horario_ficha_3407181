@@ -48,11 +48,15 @@ body {
     margin-bottom: 20px;
 }
 
-.sched {
-    display: flex;
-    border: 1px solid #2a2a2a;
+/* WRAPPER para que el hover no se corte */
+.sched-wrapper {
     border-radius: 12px;
     overflow: hidden;
+    border: 1px solid #2a2a2a;
+}
+
+.sched {
+    display: flex;
 }
 
 .col {
@@ -115,6 +119,9 @@ body {
     justify-content: center;
     padding: 7px;
     background: #0d0d0d;
+    overflow: visible;
+    position: relative;
+    z-index: 0;
 }
 
 .slot:last-child {
@@ -145,12 +152,15 @@ body {
     background: #161208;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     cursor: default;
+    position: relative;
+    z-index: 1;
 }
 
 .card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 28px rgba(201, 168, 76, 0.25);
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 10px 28px rgba(201, 168, 76, 0.3);
     border-color: #c9a84c;
+    z-index: 10;
 }
 
 .card i {
@@ -184,13 +194,16 @@ body {
     display: inline-block;
 }
 
-/* SÁBADO CON HOVER */
+/* SÁBADO */
 .sat-block {
     background: #0d0d0d;
     height: 460px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
+    position: relative;
+    z-index: 0;
 }
 
 .sat-inner {
@@ -206,12 +219,15 @@ body {
     background: #161208;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     cursor: default;
+    position: relative;
+    z-index: 1;
 }
 
 .sat-inner:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 28px rgba(201, 168, 76, 0.25);
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 10px 28px rgba(201, 168, 76, 0.3);
     border-color: #c9a84c;
+    z-index: 10;
 }
 
 .sat-inner i {
@@ -250,6 +266,7 @@ body {
     display: inline-block;
 }
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
     .sched {
         flex-direction: column;
